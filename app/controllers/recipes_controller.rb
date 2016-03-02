@@ -25,4 +25,30 @@ class RecipesController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @recipe = Recipe.find_by id: params[:id]
+  end
+
+  def update
+    @recipe = Recipe.find_by id: params[:id]
+
+    @recipe.name = params[:recipe][:name]
+    @recipe.description = params[:recipe][:description]
+    @recipe.ingredients = params[:recipe][:ingredients]
+    @recipe.method = params[:recipe][:method]
+    @recipe.photo_url = params[:recipe][:photo_url]
+
+    if @recipe.save
+      redirect_to recipes_path(id: @recipe.id)
+    else
+      render :edit
+    end
+  end
+
+  def delete
+    @recipe = Recipe.find_by id: params[:id]
+    @recipe.destroy
+    redirect_to recipes_path
+  end
 end
