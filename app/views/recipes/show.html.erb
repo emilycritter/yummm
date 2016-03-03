@@ -14,7 +14,7 @@
       <% end %>
     </h1>
 
-    <%= image_tag @recipe.photo_url %>
+    <%= image_tag attachment_url(@recipe, :photo, :fill, 400, 150, format: "jpg") %>
 
 
     <h3>Description</h3>
