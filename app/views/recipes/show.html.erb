@@ -14,6 +14,8 @@
       <% end %>
     </h1>
 
+    <p><small>Recipe has been viewed <%= pluralize @recipe.view_count, 'time' %>. <em>Category: <%= @recipe.category.name.downcase %></em> </small></p>
+
     <%= image_tag attachment_url(@recipe, :photo, :fill, 400, 150, format: "jpg") %>
 
 
