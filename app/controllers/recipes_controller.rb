@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
     @recipe.name = params[:recipe][:name]
     @recipe.description = params[:recipe][:description]
+    @recipe.category_id = params[:recipe][:category_id]
     @recipe.ingredients = params[:recipe][:ingredients]
     @recipe.method = params[:recipe][:method]
     @recipe.photo = params[:recipe][:photo]
@@ -35,6 +36,7 @@ class RecipesController < ApplicationController
 
     @recipe.name = params[:recipe][:name]
     @recipe.description = params[:recipe][:description]
+    @recipe.category_id = params[:recipe][:category_id]
     @recipe.ingredients = params[:recipe][:ingredients]
     @recipe.method = params[:recipe][:method]
     @recipe.photo = params[:recipe][:photo]

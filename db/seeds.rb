@@ -67,3 +67,10 @@ if Recipe.count == 0
   pancake.photo_url = "http://cdn1.recipetineats.com/wp-content/uploads/2015/06/Nutella-Stuffed-Pancakes_680px_1.jpg"
   pancake.save
 end
+
+
+if Category.count == 0
+ Category.create name: "Breakfast"
+ Category.create name: "Tacos"
+ Category.create name: "Vegetarian"
+end
